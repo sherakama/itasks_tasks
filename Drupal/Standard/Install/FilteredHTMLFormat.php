@@ -15,6 +15,11 @@ class FilteredHTMLFormat extends \AbstractInstallTask {
    *  Installation arguments.
    */
   public function execute(&$args = array()) {
+
+    if (!module_exists("filter")) {
+      module_enable(array("filter"));
+    }
+
     // Add text formats.
     $filtered_html_format = array(
       'format' => 'filtered_html',
@@ -46,5 +51,29 @@ class FilteredHTMLFormat extends \AbstractInstallTask {
     $filtered_html_format = (object) $filtered_html_format;
     filter_format_save($filtered_html_format);
   }
+
+/**
+ * [installTaskAlter description]
+ * @param  [type] &$tasks [description]
+ * @return [type]         [description]
+ */
+  public function installTaskAlter(&$tasks) {
+
+    // This task needs to happen just after the core modules are installed
+    // so that the dependency modules have what they need.
+
+    // Store me in a variable and unset in tasks array.
+    $me = $tasks[$this->getMachineName()];
+    unset($tasks[$this->getMachineName()]);
+
+    // Find out what index bootstrap task is so we can insert after.
+    $index = array_search("install_bootstrap_full", array_keys($tasks));
+    $index++;
+
+    // Slick up and patch in $me at the proper place.
+    $tasks = array_slice($tasks, 0, $index, TRUE) +
+      array($this->getMachineName() => $me) +
+      array_slice($tasks, $index, count($tasks) - $index, TRUE);
+ }
 
 }

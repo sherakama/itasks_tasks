@@ -8,7 +8,7 @@ namespace Stanford\Jumpstart\Install\Content\Importer;
 /**
  *
  */
-class ImporterFieldProcessorCustomFieldSDestinationPublish extends ImporterFieldProcessor {
+class ImporterFieldProcessorCustomFieldSDestinationPublish extends \ImporterFieldProcessor {
 
   /**
    * [process description]

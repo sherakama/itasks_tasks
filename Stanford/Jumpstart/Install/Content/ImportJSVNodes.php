@@ -29,6 +29,8 @@ class ImportJSVNodes extends \AbstractInstallTask {
     $view_importer->set_endpoint($endpoint);
     $view_importer->set_resource('content');
     $view_importer->set_filters($filters);
+    $view_importer->add_field_processor(array("body" => "\Stanford\Jumpstart\Install\Content\Importer\ImporterFieldProcessorCustomBody"));
+    $view_importer->add_field_processor(array("field_s_destination_publish" => "\Stanford\Jumpstart\Install\Content\Importer\ImporterFieldProcessorCustomFieldSDestinationPublish"));
     $view_importer->import_content_by_views_and_filters();
 
   }
