@@ -16,10 +16,6 @@ class FilteredHTMLFormat extends \AbstractInstallTask {
    */
   public function execute(&$args = array()) {
 
-    if (!module_exists("filter")) {
-      module_enable(array("filter"));
-    }
-
     // Add text formats.
     $filtered_html_format = array(
       'format' => 'filtered_html',
@@ -76,4 +72,14 @@ class FilteredHTMLFormat extends \AbstractInstallTask {
       array_slice($tasks, $index, count($tasks) - $index, TRUE);
  }
 
+}
+/**
+ * Depedencies
+ **/
+public function requirements() {
+  return array(
+    'filter',
+  );
+}
+  
 }
