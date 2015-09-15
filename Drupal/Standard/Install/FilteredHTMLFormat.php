@@ -72,14 +72,13 @@ class FilteredHTMLFormat extends \AbstractInstallTask {
       array_slice($tasks, $index, count($tasks) - $index, TRUE);
  }
 
-}
-/**
- * Depedencies
- **/
-public function requirements() {
-  return array(
-    'filter',
-  );
-}
-  
+  /**
+   * Depedencies
+   **/
+  public function requirements() {
+    return array(
+      'filter',
+    );
+  }
+
 }

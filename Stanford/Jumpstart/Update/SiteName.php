@@ -19,7 +19,7 @@ class SiteName extends \AbstractUpdateTask {
    *   Installation arguments.
    */
   public function execute(&$args = array()) {
-    variable_set("My New Site Name IS: " . md5(time()));
+    variable_set("site_name", "My New Site Name IS: " . md5(time()));
   }
 
 }
