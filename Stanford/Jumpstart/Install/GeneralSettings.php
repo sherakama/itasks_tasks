@@ -18,19 +18,43 @@ class GeneralSettings extends \AbstractInstallTask {
    */
   public function execute(&$args = array()) {
 
-    // $site_name  = variable_get('site_name', "Stanford Jumpstart");
-    // variable_set('site_name', $site_name);
-
     $four_oh_four = drupal_get_normal_path('404');
     variable_set('site_404', $four_oh_four);
 
     // Turn views into more developer like.
-    module_load_include('inc', 'views', 'drush/views.drush');
-    views_development_settings();
+
+    // This function is only available through drush...
+    if (function_exists("views_development_settings")) {
+      views_development_settings();
+    }
+    else {
+      $this->viewsDevelopmentSettings();
+    }
 
     // Unset user menu as secondary links.
     variable_set('menu_secondary_links_source', "");
 
   }
 
+  /**
+   * Patch function for when installing through the UI.
+   * Pretty much a carbon copy of views_development_settings();
+   */
+  private function viewsDevelopmentSettings() {
+    variable_set('views_ui_show_listing_filters', TRUE);
+    variable_set('views_ui_show_master_display', TRUE);
+    variable_set('views_ui_show_advanced_column', TRUE);
+    variable_set('views_ui_always_live_preview', FALSE);
+    variable_set('views_ui_always_live_preview_button', TRUE);
+    variable_set('views_ui_show_preview_information', TRUE);
+    variable_set('views_ui_show_sql_query', TRUE);
+    variable_set('views_ui_show_performance_statistics', TRUE);
+    variable_set('views_show_additional_queries', TRUE);
+    variable_set('views_devel_output', TRUE);
+    variable_set('views_devel_region', 'message');
+    variable_set('views_ui_display_embed', TRUE);
+  }
+
 }
+
+
