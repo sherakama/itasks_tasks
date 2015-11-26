@@ -66,7 +66,7 @@ class FilteredHTMLFormat extends \AbstractInstallTask {
     $index = array_search("install_bootstrap_full", array_keys($tasks));
     $index++;
 
-    // Slick up and patch in $me at the proper place.
+    // Slice up and patch in $me at the proper place.
     $tasks = array_slice($tasks, 0, $index, TRUE) +
       array($this->getMachineName() => $me) +
       array_slice($tasks, $index, count($tasks) - $index, TRUE);

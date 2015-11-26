@@ -40,6 +40,7 @@ class GeneralConfig extends \AbstractInstallTask {
   public function requirements() {
     return  array(
       'comment',
+      'filter',
     );
   }
 
