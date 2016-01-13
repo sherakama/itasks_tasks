@@ -30,6 +30,7 @@ class MenuSettings extends \AbstractInstallTask {
       'link_title' => 'About',
       'menu_name' => 'main-menu',
       'weight' => -8,
+      'expanded' => TRUE,
     );
 
     $items['about/what-to-expect'] = array(
@@ -38,7 +39,6 @@ class MenuSettings extends \AbstractInstallTask {
       'menu_name' => 'main-menu',
       'parent' => 'about',
       'weight' => -9,
-      'expanded' => TRUE,
     );
 
     $items['about/organizing-committee'] = array(
