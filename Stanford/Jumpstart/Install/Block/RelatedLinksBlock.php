@@ -18,7 +18,7 @@ class RelatedLinksBlock extends \AbstractInstallTask {
    */
   public function execute(&$args = array()) {
 
-     $menu = array(
+    $menu = array(
       "menu_name" => "menu-related-links",
       "title" => t("Related Links"),
       "description" => t("Related Links menu for mainsite footer"),
