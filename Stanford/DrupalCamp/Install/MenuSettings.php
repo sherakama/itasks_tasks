@@ -49,12 +49,36 @@ class MenuSettings extends \AbstractInstallTask {
       'parent' => 'about',
     );
 
+    $items['about/food-drink'] = array(
+      'link_path' => drupal_get_normal_path('about/food-drink'),
+      'link_title' => 'Food & Drink',
+      'menu_name' => 'main-menu',
+      'weight' => -7,
+      'parent' => 'about',
+    );
+
+    $items['about/code-conduct'] = array(
+      'link_path' => drupal_get_normal_path('about/code-conduct'),
+      'link_title' => 'Code of Conduct',
+      'menu_name' => 'main-menu',
+      'weight' => -6,
+      'parent' => 'about',
+    );
+
     $items['about/past-camps'] = array(
       'link_path' => drupal_get_normal_path('about/past-camps'),
       'link_title' => 'Past Camps',
       'menu_name' => 'main-menu',
-      'weight' => -7,
+      'weight' => 10,
       'parent' => "about",
+    );
+
+    $items['news/recent-news'] = array(
+      'link_path' => drupal_get_normal_path('news/recent-news'),
+      'link_title' => 'Updates',
+      'menu_name' => 'main-menu',
+      'weight' => -7,
+      'expanded' => TRUE,
     );
 
     $items['venue'] = array(
@@ -62,6 +86,23 @@ class MenuSettings extends \AbstractInstallTask {
       'link_title' => 'Location',
       'menu_name' => 'main-menu',
       'weight' => -4,
+      'expanded' => TRUE,
+    );
+
+    $items['venue/location'] = array(
+      'link_path' => drupal_get_normal_path('venue'),
+      'link_title' => 'Venue',
+      'menu_name' => 'main-menu',
+      'weight' => -10,
+      'parent' => "venue",
+    );
+
+    $items['venue/getting-here'] = array(
+      'link_path' => drupal_get_normal_path('venue/getting-here'),
+      'link_title' => 'Getting Here',
+      'menu_name' => 'main-menu',
+      'weight' => -9,
+      'parent' => "venue",
     );
 
     $items['stanford-jobs'] = array(
