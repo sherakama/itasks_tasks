@@ -15,7 +15,6 @@ class GeneralSettings extends \AbstractInstallTask {
    *  Installation arguments.
    */
   public function execute(&$args = array()) {
-    variable_set("site_name", "Webauth Install");
   }
 
   /**
