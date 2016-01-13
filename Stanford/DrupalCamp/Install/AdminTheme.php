@@ -18,9 +18,9 @@ class AdminTheme extends \AbstractInstallTask {
    */
   public function execute(&$args = array()) {
     // Enable themes.
-    $themes = array('adminimal_theme');
+    $themes = array('adminimal');
     theme_enable($themes);
-    variable_set('admin_theme', 'adminimal_theme');
+    variable_set('admin_theme', 'adminimal');
   }
 
   /**
