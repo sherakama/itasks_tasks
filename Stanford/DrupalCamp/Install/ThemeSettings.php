@@ -17,6 +17,9 @@ class ThemeSettings extends \AbstractInstallTask {
    *   Installation arguments.
    */
   public function execute(&$args = array()) {
+
+    $themes = array('stanford_framework');
+    theme_enable($themes);
     variable_set('theme_default', 'stanford_framework');
     variable_set('node_admin_theme', 1);
 
@@ -71,7 +74,7 @@ class ThemeSettings extends \AbstractInstallTask {
    */
   public function requirements() {
     return array(
-      'stanford_framework',
+      // 'stanford_framework',
     );
   }
 
