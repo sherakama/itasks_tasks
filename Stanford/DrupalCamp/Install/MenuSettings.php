@@ -133,6 +133,7 @@ class MenuSettings extends \AbstractInstallTask {
       'link_title' => 'Schedule',
       'menu_name' => 'main-menu',
       'weight' => -3,
+      'hidden' => 1,
     );
 
     $items['schedule/2016-04-01'] = array(
@@ -141,6 +142,7 @@ class MenuSettings extends \AbstractInstallTask {
       'menu_name' => 'main-menu',
       'weight' => -9,
       'parent' => "schedule",
+      'hidden' => 1,
     );
 
     $items['schedule/2016-04-02'] = array(
@@ -149,6 +151,7 @@ class MenuSettings extends \AbstractInstallTask {
       'menu_name' => 'main-menu',
       'weight' => -8,
       'parent' => "schedule",
+      'hidden' => 1,
     );
 
     $items['schedule/mine'] = array(
@@ -157,6 +160,7 @@ class MenuSettings extends \AbstractInstallTask {
       'menu_name' => 'main-menu',
       'weight' => -7,
       'parent' => "schedule",
+      'hidden' => 1,
     );
 
     $items['stanford-jobs'] = array(
