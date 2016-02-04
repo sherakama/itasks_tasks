@@ -55,6 +55,7 @@ class MenuSettings extends \AbstractInstallTask {
       'menu_name' => 'main-menu',
       'weight' => -7,
       'parent' => 'about',
+      'hidden' => 1,
     );
 
     $items['about/code-conduct'] = array(
