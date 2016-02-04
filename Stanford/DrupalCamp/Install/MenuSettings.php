@@ -73,11 +73,27 @@ class MenuSettings extends \AbstractInstallTask {
       'parent' => "about",
     );
 
-    $items['news/recent-news'] = array(
-      'link_path' => drupal_get_normal_path('news/recent-news'),
-      'link_title' => 'Updates',
+    // $items['news/recent-news'] = array(
+    //   'link_path' => drupal_get_normal_path('news/recent-news'),
+    //   'link_title' => 'Updates',
+    //   'menu_name' => 'main-menu',
+    //   'weight' => -7,
+    //   'expanded' => TRUE,
+    // );
+
+    $items['community'] = array(
+      'link_path' => drupal_get_normal_path('community'),
+      'link_title' => 'Community',
       'menu_name' => 'main-menu',
-      'weight' => -7,
+      'weight' => -4,
+      'expanded' => TRUE,
+    );
+
+    $items['sponsors'] = array(
+      'link_path' => drupal_get_normal_path('sponsors'),
+      'link_title' => 'Sponsors',
+      'menu_name' => 'main-menu',
+      'weight' => -4,
       'expanded' => TRUE,
     );
 
@@ -103,6 +119,44 @@ class MenuSettings extends \AbstractInstallTask {
       'menu_name' => 'main-menu',
       'weight' => -9,
       'parent' => "venue",
+    );
+
+    $items['sessions/proposed'] = array(
+      'link_path' => drupal_get_normal_path('sessions/proposed'),
+      'link_title' => 'Proposed Sessions',
+      'menu_name' => 'main-menu',
+      'weight' => -3,
+    );
+
+    $items['schedule'] = array(
+      'link_path' => drupal_get_normal_path('schedule/2016-04-01'),
+      'link_title' => 'Schedule',
+      'menu_name' => 'main-menu',
+      'weight' => -3,
+    );
+
+    $items['schedule/2016-04-01'] = array(
+      'link_path' => drupal_get_normal_path('schedule/2016-04-01'),
+      'link_title' => 'Friday Sessions',
+      'menu_name' => 'main-menu',
+      'weight' => -9,
+      'parent' => "schedule",
+    );
+
+    $items['schedule/2016-04-02'] = array(
+      'link_path' => drupal_get_normal_path('schedule/2016-04-02'),
+      'link_title' => 'Saturday Sessions',
+      'menu_name' => 'main-menu',
+      'weight' => -8,
+      'parent' => "schedule",
+    );
+
+    $items['schedule/mine'] = array(
+      'link_path' => drupal_get_normal_path('schedule/mine'),
+      'link_title' => 'My Schedule',
+      'menu_name' => 'main-menu',
+      'weight' => -7,
+      'parent' => "schedule",
     );
 
     $items['stanford-jobs'] = array(

@@ -27,6 +27,9 @@ class ImportDrupalCampBeans extends \AbstractInstallTask {
     $uuids = array(
       '6435a4e6-2f53-4236-8f1b-06d12c3ffa25', // News and Updates homepage
       '22db72c1-b06a-4ae3-aed5-a4f4078b3763', // Twitter Widget
+      '038c1749-e7a2-4e0e-ad9d-8eef4ed7e2fc', // Sign up for DrupalCamp
+      '2a84eda4-b6fc-4eed-97b7-d0040f7e2a8c', // DrupalCamp Banner
+      '10535876-06b1-421b-8b00-56d741e1ea70', // DrupalCamp Propose A Session Button
     );
     $importer = new \SitesContentImporter();
     $importer->set_endpoint($endpoint);
