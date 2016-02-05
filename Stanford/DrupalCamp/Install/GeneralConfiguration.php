@@ -19,15 +19,9 @@ class GeneralConfiguration extends \AbstractInstallTask {
   public function execute(&$args = array()) {
     // Set the home page.
     variable_set("site_frontpage", drupal_get_normal_path("welcome-stanford-drupalcamp"));
-
-    // Remove some modules we don't need.
-    module_disable(
-      array(
-        "dashboard",
-        "comment",
-      ),
-    TRUE);
-
+    // variable_set("site_403", drupal_get_normal_path("403"));
+    variable_set("site_404", drupal_get_normal_path("404"));
+    variable_set("site_slogan", "It's camp");
   }
 
   /**
