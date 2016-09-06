@@ -19,16 +19,16 @@ class StandardBlocks extends \AbstractInstallTask {
     $default_theme = variable_get('theme_default', 'bartik');
     $admin_theme = 'seven';
     $admin_blocks = array(
-      array(
-        'module' => 'node',
-        'delta' => 'recent',
-        'theme' => $admin_theme,
-        'status' => 1,
-        'weight' => 10,
-        'region' => 'dashboard_main',
-        'pages' => '',
-        'cache' => -1,
-      ),
+      // array(
+      //   'module' => 'node',
+      //   'delta' => 'recent',
+      //   'theme' => $admin_theme,
+      //   'status' => 1,
+      //   'weight' => 10,
+      //   'region' => 'dashboard_main',
+      //   'pages' => '',
+      //   'cache' => -1,
+      // ),
       array(
         'module' => 'system',
         'delta' => 'main',
@@ -59,26 +59,26 @@ class StandardBlocks extends \AbstractInstallTask {
         'pages' => '',
         'cache' => -1,
       ),
-      array(
-        'module' => 'user',
-        'delta' => 'new',
-        'theme' => $admin_theme,
-        'status' => 1,
-        'weight' => 0,
-        'region' => 'dashboard_sidebar',
-        'pages' => '',
-        'cache' => -1,
-      ),
-      array(
-        'module' => 'search',
-        'delta' => 'form',
-        'theme' => $admin_theme,
-        'status' => 1,
-        'weight' => -10,
-        'region' => 'dashboard_sidebar',
-        'pages' => '',
-        'cache' => -1,
-      ),
+      // array(
+      //   'module' => 'user',
+      //   'delta' => 'new',
+      //   'theme' => $admin_theme,
+      //   'status' => 1,
+      //   'weight' => 0,
+      //   'region' => 'dashboard_sidebar',
+      //   'pages' => '',
+      //   'cache' => -1,
+      // ),
+      // array(
+      //   'module' => 'search',
+      //   'delta' => 'form',
+      //   'theme' => $admin_theme,
+      //   'status' => 1,
+      //   'weight' => -10,
+      //   'region' => 'dashboard_sidebar',
+      //   'pages' => '',
+      //   'cache' => -1,
+      // ),
     );
 
     $query = db_insert('block')->fields(array('module', 'delta', 'theme', 'status', 'weight', 'region', 'pages', 'cache'));
@@ -174,7 +174,7 @@ class StandardBlocks extends \AbstractInstallTask {
       'search',
       'system',
       'node',
-      'dashboard',
+      // 'dashboard',
     );
   }
 
